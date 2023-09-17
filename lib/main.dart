@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'scene_viewer.dart';
+import 'app/infrastructure/api/firebase_init.dart'; // import the initializer
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await FirebaseInitializer.initialize();  // initialize Firebase
   runApp(MyApp());
 }
 
